@@ -26,15 +26,6 @@ public class home extends AppCompatActivity {
 
     private void launchActivity() {
         Intent intent = new Intent(this, page1.class);
-//sets random number of coffee/water/creamer
-        Integer setCoffee = (int) (3 * Math.random()) +1;
-        int setWater = (int) (3 * Math.random())+1;
-        int setCreamer = (int) (3 * Math.random())+1;
-        Toast.makeText(this, setCoffee.toString(),
-                Toast.LENGTH_SHORT).show();
-        intent.putExtra("setCoffee", setCoffee);
-        intent.putExtra("setWater", setWater);
-        intent.putExtra("setCreamer", setCreamer);
 
         startActivity(intent);
         finish();

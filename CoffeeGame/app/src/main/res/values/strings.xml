@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Covfefe</string>
+    <string name="app_name">Frappe or Frappy</string>
+
+    <string name="instructions">Welcome to frappe or frappy! You are making a coffee for a friend,
+        but you did not hear what they wanted to drink. Now you have to guess what they ordered.
+        If you guess correctly, they will buy you a frappe! If not, you will have to do a frappy."</string>
 </resources>

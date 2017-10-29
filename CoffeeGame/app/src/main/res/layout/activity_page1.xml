@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context="com.example.liaiwei.coffeegame.page1"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
@@ -13,13 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1 oz"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/choiceTwo"
-        app:layout_constraintRight_toRightOf="@+id/choiceTwo"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/choiceTwo"
+        tools:layout_constraintBaseline_creator="1"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="53dp"
-        app:layout_constraintLeft_toLeftOf="@+id/choiceTwo" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/choiceTwo"
@@ -28,29 +27,27 @@
         android:text="2 oz"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toTopOf="@+id/choiceThree"
-        app:layout_constraintRight_toRightOf="@+id/choiceThree"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintLeft_toLeftOf="@+id/choiceThree" />
+        android:layout_marginBottom="85dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Button
         android:id="@+id/choiceThree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3 oz"
+        android:layout_marginEnd="32dp"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="77dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/choiceTwo"
+        tools:layout_constraintBaseline_creator="1" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="232dp"
-        android:layout_height="82dp"
+        android:layout_height="0dp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -60,8 +57,24 @@
         tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="58dp"
+        android:layout_marginTop="54dp"
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/watercup"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/choiceOne"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="44dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="41dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 </android.support.constraint.ConstraintLayout>

@@ -50,17 +50,22 @@ public class page3 extends AppCompatActivity {
     }
 
     private void launchActivity(int i) {
-        boolean guessright = false;
-        Bundle extras = getIntent().getExtras();
-        int correct = extras.getInt("setCreamer");
+        boolean guessRight = false;
+        int correct = (int) (Math.random()*3);
+        correct++;
 
         if(i == correct){
-            guessright = true;
+            guessRight = true;
         }
 
-        Intent intent = new Intent(this, page4.class);
+        Bundle extras = getIntent().getExtras();
+        Boolean waterAns = extras.getBoolean("waterAns");
+        Boolean coffeeAns = extras.getBoolean("coffeeAns");
 
-        intent.putExtra("creamerRight", guessright);
+        Intent intent = new Intent(this, page4.class);
+        intent.putExtra("creamerAns", guessRight);
+        intent.putExtra("coffeeAns", coffeeAns);
+        intent.putExtra("waterAns", waterAns);
         startActivity(intent);
         finish();
     }

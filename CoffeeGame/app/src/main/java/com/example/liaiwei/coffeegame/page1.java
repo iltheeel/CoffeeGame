@@ -49,23 +49,19 @@ public class page1 extends AppCompatActivity {
     }
 
     private void launchActivity(int i) {
-        boolean guessright = false;
-        Bundle extras = getIntent().getExtras();
+        boolean guessRight = false;
+        int correct = (int) (Math.random()*3);
+        correct++;
 
-        Integer correct = extras.getInt("setWater");
-
-        Toast.makeText(this, correct.toString() ,
-                Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "water check " + i + " correct is "+ correct,
+              //  Toast.LENGTH_SHORT).show();
 
         if(i == correct){
-            guessright = true;
-           // Toast.makeText(this, "yay",
-                   // Toast.LENGTH_SHORT).show();
+            guessRight = true;
         }
 
         Intent intent = new Intent(this, page2.class);
-
-        intent.putExtra("waterRight", guessright);
+        intent.putExtra("waterAns", guessRight);
         startActivity(intent);
         finish();
     }
