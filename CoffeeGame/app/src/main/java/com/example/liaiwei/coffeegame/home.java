@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class home extends AppCompatActivity {
     private Button startb;
-    private int
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,15 @@ public class home extends AppCompatActivity {
 
     private void launchActivity() {
         Intent intent = new Intent(this, page1.class);
-
-        int setCoffee = (int) (3 * Math.random());
-        int setWater = (int) (3 * Math.random());
-        int setCreamer = (int) (3 * Math.random());
+//sets random number of coffee/water/creamer
+        Integer setCoffee = (int) (3 * Math.random()) +1;
+        int setWater = (int) (3 * Math.random())+1;
+        int setCreamer = (int) (3 * Math.random())+1;
+        Toast.makeText(this, setCoffee.toString(),
+                Toast.LENGTH_SHORT).show();
         intent.putExtra("setCoffee", setCoffee);
         intent.putExtra("setWater", setWater);
-        intent.putExtra("set")
+        intent.putExtra("setCreamer", setCreamer);
 
         startActivity(intent);
         finish();

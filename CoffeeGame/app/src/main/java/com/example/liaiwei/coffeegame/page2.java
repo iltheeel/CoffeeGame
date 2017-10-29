@@ -8,23 +8,24 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class page1 extends AppCompatActivity {
+import org.w3c.dom.Text;
+
+public class page2 extends AppCompatActivity {
     private Button choiceOne;
     private Button choiceTwo;
     private Button choiceThree;
     private TextView text;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_page1);
+        setContentView(R.layout.activity_page2);
 
         text = (TextView)  findViewById(R.id.textView2);
-        text.setText("How much water?");
+        text.setText("How much coffee mix?");
 
         choiceOne = (Button) findViewById(R.id.choiceOne);
-        choiceOne.setOnClickListener(new View.OnClickListener(){
+        choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchActivity(1);
@@ -32,7 +33,7 @@ public class page1 extends AppCompatActivity {
         });
 
         choiceTwo = (Button) findViewById(R.id.choiceTwo);
-        choiceTwo.setOnClickListener(new View.OnClickListener(){
+        choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchActivity(2);
@@ -40,7 +41,7 @@ public class page1 extends AppCompatActivity {
         });
 
         choiceThree = (Button) findViewById(R.id.choiceThree);
-        choiceThree.setOnClickListener(new View.OnClickListener(){
+        choiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 launchActivity(3);
@@ -52,20 +53,15 @@ public class page1 extends AppCompatActivity {
         boolean guessright = false;
         Bundle extras = getIntent().getExtras();
 
-        Integer correct = extras.getInt("setWater");
-
-        Toast.makeText(this, correct.toString() ,
-                Toast.LENGTH_SHORT).show();
+        int correct = extras.getInt("setCoffee");
 
         if(i == correct){
             guessright = true;
-           // Toast.makeText(this, "yay",
-                   // Toast.LENGTH_SHORT).show();
         }
 
-        Intent intent = new Intent(this, page2.class);
+        Intent intent = new Intent(this, page3.class);
 
-        intent.putExtra("waterRight", guessright);
+        intent.putExtra("coffeeRight", guessright);
         startActivity(intent);
         finish();
     }
